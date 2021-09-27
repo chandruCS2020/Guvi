@@ -26,7 +26,7 @@ login_form.addEventListener('submit', e =>{
 });
 function handleResponse (responseObject) {
     if (responseObject.ok) {
-        location.href = 'http://localhost/guvi/main.html';
+        location.href = '../main.html';
     } else {
         while (messages.firstChild) {
             messages.removeChild(messages.firstChild);
