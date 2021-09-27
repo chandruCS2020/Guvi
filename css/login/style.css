@@ -186,6 +186,17 @@ input[type=radio] {
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+#form-messages {
+  background-color: #ffe8e8;
+  border: 1px solid red;
+  color: red;
+  display: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 .form-inner form .field {
   height: 50px;
   margin: 30px auto;

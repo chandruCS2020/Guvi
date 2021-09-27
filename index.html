@@ -33,7 +33,8 @@
                         </div>
                     </div>
                     <div class="form-inner">
-                        <form action="#" class="login" id="login-form">
+                        <form class="login" id="login-form">
+                            <ul class="col-12" id="form-messages"></ul>
                             <div class="form-group field">
                                 <input type="text" class="form-control" id="l-email" placeholder="Email Address" >
                                 <i class="fa fa-check-circle"></i>
@@ -51,13 +52,13 @@
                             </div>
                             <div class="field btn">
                                 <div class="btn-layer"></div>
-                                <input type="submit" value="Login">
+                                <input type="submit" value="Login" id="l-submit">
                             </div>
                             <div class="signup-link">
                                 Not a member? <a href="">Signup now</a>
                             </div>
                         </form>
-                        <form action="#" class="signup" id="form-signup">
+                        <form class="signup" id="form-signup">
                             <div class="form-row">
                                 <div class="form-group  col-md-6 field">
                                     <input type="text" class="form-control" id="s-name" placeholder="Name">
@@ -117,10 +118,52 @@
             </div>
         </div>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/validate.js"></script>
     <script src="js/toggle.js"></script>
+    <!-- <script>
+        const login_form1=document.getElementById('login-form');
+        const email=document.getElementById('l-email');
+        const password=document.getElementById('l-password');
+        const submit=document.getElementById('l-submit');
+        const message=document.getElementById('form-messages');
+        submit.addEventListener('submit',()=>{
+            const request = new XMLHttpRequest();
+            request.onload = () => {
+                let responseObject = null;
+                try {
+                    responseObject = JSON.parse(request.responseText);
+                } catch (e) {
+                    console.error('Could not parse JSON!');
+                }
+                if (responseObject) {
+                    handleResponse(responseObject);
+                }
+            };
+            const requestData = `useremail=${email.value}&password=${password.value}`;
+            console.log(requestData);
+            request.open('post', 'check-login.php');
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestData);
+        });
+        function handleResponse (responseObject) {
+            if (responseObject.ok) {
+                location.href = 'dashboard.html';
+            } else {
+                while (messages.firstChild) {
+                    messages.removeChild(form.messages.firstChild);
+                }
+                responseObject.messages.forEach((message) => {
+                    const li = document.createElement('li');
+                    li.textContent = message;
+                    messages.appendChild(li);
+                });
+                messages.style.display = "block";
+            }
+        }
+    </script> -->
 </body>
 </html>

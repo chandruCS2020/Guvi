@@ -1,10 +1,44 @@
 const login_form=document.getElementById('login-form');
 const login_email=document.getElementById('l-email');
 const login_pass=document.getElementById('l-password');
+const messages=document.getElementById('form-messages');
 login_form.addEventListener('submit', e =>{
     e.preventDefault();
     checkInputs();
+    const request = new XMLHttpRequest();
+    request.onload = () => {
+        let responseObject = null;
+        console.log(request.responseText);
+        try {
+            responseObject = JSON.parse(request.responseText);
+        } catch (e) {
+            console.error('Could not parse JSON!');
+        }
+        if (responseObject) {
+            handleResponse(responseObject);
+        }
+    };
+    const requestData = `useremail=${login_email.value}&password=${login_pass.value}`;
+    console.log(requestData);
+    request.open('post', 'php/check-login.php');
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.send(requestData);
 });
+function handleResponse (responseObject) {
+    if (responseObject.ok) {
+        location.href = 'http://localhost/guvi/main.html';
+    } else {
+        while (messages.firstChild) {
+            messages.removeChild(messages.firstChild);
+        }
+        responseObject.message.forEach((message) => {
+            const li = document.createElement('li');
+            li.textContent = message;
+            messages.appendChild(li);
+        });
+        messages.style.display = "block";
+    }
+}
 function checkInputs(){
     const email=login_email.value.trim();
     const password=login_pass.value.trim();
