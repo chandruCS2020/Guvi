@@ -1,13 +1,14 @@
 <?php
-$to_email = "chandru6501@gmail.com";
-$subject = "Simple Email Test via PHP";
-$body = "Hi, This is test email send by PHP Script";
-$email="19euit031@skcet.ac.in";
-$headers = "From:" . $email;
+// the message
+$msg = "First line of text\nSecond line of text";
 
-if (mail($to_email, $subject, $body, $headers)) {
-    echo "Email successfully sent to $to_email...";
-} else {
-    echo "Email sending failed...";
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+
+// send email
+if(mail("chandru6501@gmail.com","My subject",$msg)){
+    echo "Success";
+}else {
+    echo "failure";
 }
 ?>
