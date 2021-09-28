@@ -1,14 +1,10 @@
 <?php
-// the message
-$msg = "First line of text\nSecond line of text";
-
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-
-// send email
-if(mail("chandru6501@gmail.com","My subject",$msg)){
-    echo "Success";
-}else {
-    echo "failure";
-}
+$to       = 'chandru6501@gmail.com';
+$subject  = 'Testing sendmail.exe';
+$message  = 'Hi, you just received an email using sendmail!';
+$headers  = 'From: chandru6501@gmail.com@gmail.com';
+if(mail($to, $subject, $message, $headers))
+    echo "Email sent";
+else
+    echo "Email sending failed";
 ?>
