@@ -2,7 +2,8 @@
 $to_email = "chandru6501@gmail.com";
 $subject = "Simple Email Test via PHP";
 $body = "Hi, This is test email send by PHP Script";
-$headers = "From: 19euit031@skcet.ac.in";
+$email="19euit031@skcet.ac.in";
+$headers = "From:" . $email;
 
 if (mail($to_email, $subject, $body, $headers)) {
     echo "Email successfully sent to $to_email...";
