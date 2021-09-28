@@ -8,7 +8,6 @@ login_form.addEventListener('submit', e =>{
     const request = new XMLHttpRequest();
     request.onload = () => {
         let responseObject = null;
-        console.log(request.responseText);
         try {
             responseObject = JSON.parse(request.responseText);
         } catch (e) {
