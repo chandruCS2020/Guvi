@@ -133,7 +133,7 @@ input[type="radio"]{
     width: 50%;
     transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
-#form-messages {
+#form-messages{
     background-color: rgb(255, 232, 232);
     border: 1px solid red;
     color: red;
@@ -142,6 +142,16 @@ input[type="radio"]{
     font-weight: bold;
     padding: 10px;
     margin-bottom: 10px;
+}
+#form-messages.success{
+    border: 1px solid #10e181;
+    background-color: white;
+    color: #10e181;
+}
+#form-messages.error{
+    background-color: rgb(255, 232, 232);
+    border: 1px solid red;
+    color: red;
 }
 .form-inner form .field{
     height: 50px;

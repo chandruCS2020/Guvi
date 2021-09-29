@@ -197,6 +197,18 @@ input[type=radio] {
   margin-bottom: 10px;
 }
 
+#form-messages.success {
+  border: 1px solid #10e181;
+  background-color: white;
+  color: #10e181;
+}
+
+#form-messages.error {
+  background-color: #ffe8e8;
+  border: 1px solid red;
+  color: red;
+}
+
 .form-inner form .field {
   height: 50px;
   margin: 30px auto;

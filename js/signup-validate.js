@@ -7,6 +7,7 @@ const signup_age=document.getElementById('s-age');
 const signup_date=document.getElementById('s-date');
 const signup_pass=document.getElementById('s-password');
 const signup_cpass=document.getElementById('s-cpassword');
+
 signup_form.addEventListener('submit',(e)=>{
     e.preventDefault();
     if(checksignupInputs()){
@@ -31,7 +32,20 @@ signup_form.addEventListener('submit',(e)=>{
 });
 function handleResponse1 (responseObject) {
     if (responseObject.ok) {
-        alert(responseObject.message);
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+        while (messages.firstChild) {
+            messages.removeChild(messages.firstChild);
+        }
+        responseObject.message.forEach((message) => {
+            const li = document.createElement('li');
+            li.textContent = message;
+            messages.appendChild(li);
+        });
+        messages.style.display = "block";
+        messages.classList.add("success");
+        messages.classList.remove("error");
+        // alert(responseObject.message);
     } else {
         while (messages.firstChild) {
             messages.removeChild(messages.firstChild);
@@ -42,6 +56,8 @@ function handleResponse1 (responseObject) {
             messages.appendChild(li);
         });
         messages.style.display = "block";
+        messages.classList.add("error");
+        messages.classList.remove("success");
     }
 }
 function checksignupInputs(){

@@ -26,7 +26,6 @@
         $result=$stmt->execute();
         if($result===true){
             $ok=true;
-            $message[]="success";
             $to       = $email;
             $subject  = 'Email Verification';
             $link = '<a href="http://localhost/guvi/php/email-verification.php?token='.$token.'">Click here</a>';
@@ -35,9 +34,9 @@
                 'MIME-Version: 1.0' . "\r\n" .
                 'Content-type: text/html; charset=utf-8';
             if(mail($to, $subject, $messages, $headers))
-                $message[]='Email sent';
+                $message[]='We have send the Activation link,Please check it out';
             else
-                $message[]='Email Failed';
+                $message[]='Invalid email';
         }
         $stmt->close();
     }else{
