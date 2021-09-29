@@ -7,7 +7,9 @@ const signup_age=document.getElementById('s-age');
 const signup_date=document.getElementById('s-date');
 const signup_pass=document.getElementById('s-password');
 const signup_cpass=document.getElementById('s-cpassword');
-
+const signupBtn1=document.getElementById('signup');
+const loginBtn1=document.getElementById('login');
+console.log(signupBtn1);
 signup_form.addEventListener('submit',(e)=>{
     e.preventDefault();
     if(checksignupInputs()){
@@ -34,6 +36,8 @@ function handleResponse1 (responseObject) {
     if (responseObject.ok) {
         loginForm.style.marginLeft = "0%";
         loginText.style.marginLeft = "0%";
+        control.classList.remove("sign-control");
+        control.classList.add("login-control");
         while (messages.firstChild) {
             messages.removeChild(messages.firstChild);
         }

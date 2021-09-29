@@ -103,22 +103,24 @@ html,body{
 input[type="radio"]{
     display: none;
 }
-#signup:checked ~ .slider-tab{
+.login-control .slider-tab{
+    left: 0;
+}
+.sign-control .slider-tab{
     left: 50%;
 }
-#signup:checked ~ label.signup{
+.sign-control label.signup{
     color: #fff;
     cursor: default;
     user-select: none;
 }
-#signup:checked ~ label.login{
+.sign-control label.login{
     color: #000;
 }
-#login:checked ~ label.signup{
+.login-control label.signup{
     color: #000;
 }
-#login:checked ~ label.login{
-    cursor: default;
+.login-control label.login{
     user-select: none;
 }
 .wrapper .form-container{
