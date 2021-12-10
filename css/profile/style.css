@@ -8,10 +8,11 @@
   transition: all 0.2s linear;
   text-decoration: none;
   list-style: none;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 html, body {
+  display: -ms-grid;
   display: grid;
   width: 100%;
   height: 100%;

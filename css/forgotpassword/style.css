@@ -50,43 +50,9 @@ html, body {
   position: relative;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #10e181;
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border: 10px solid white;
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.wrapper .title-text {
-  margin: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 200%;
-}
-
-.wrapper .title {
-  width: 50%;
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
-  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.title {
   color: #10e181;
-  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .wrapper .slide-controls {
@@ -103,85 +69,6 @@ html, body {
           justify-content: space-between;
   border: 1px solid lightgrey;
   border-radius: 5px;
-}
-
-.slide-controls .slide {
-  height: 100%;
-  width: 100%;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 48px;
-  cursor: pointer;
-  z-index: 1;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-.slide-controls label.signup {
-  color: #000;
-}
-
-.slide-controls .slider-tab {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left: 0;
-  z-index: 0;
-  border-radius: 5px;
-  background: -webkit-gradient(linear, right bottom, left top, from(#a8eb12), color-stop(#8bea3c), color-stop(#6ce857), color-stop(#4ae56d), to(#10e181));
-  background: linear-gradient(to left top, #a8eb12, #8bea3c, #6ce857, #4ae56d, #10e181);
-  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.login-control .slider-tab {
-  left: 0;
-}
-
-.sign-control .slider-tab {
-  left: 50%;
-}
-
-.sign-control label.signup {
-  color: #fff;
-  cursor: default;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.sign-control label.login {
-  color: #000;
-}
-
-.login-control label.signup {
-  color: #000;
-}
-
-.login-control label.login {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.wrapper .form-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.form-container .form-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 200%;
 }
 
 .form-container .form-inner form {
@@ -215,7 +102,7 @@ input[type="radio"] {
 
 .form-inner form .field {
   height: 50px;
-  margin: 30px auto;
+  margin: 10px auto;
   position: relative;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -320,32 +207,13 @@ form .field input:focus::placeholder {
   color: #b3b3b3;
 }
 
-.form-inner form .pass-link {
-  margin-top: 5px;
-}
-
-.form-inner form .signup-link {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.form-inner form .pass-link a,
-.form-inner form .signup-link a {
-  color: #A8EB12;
-  text-decoration: none;
-}
-
-.form-inner form .pass-link a:hover,
-.form-inner form .signup-link a:hover {
-  text-decoration: underline;
-}
-
 form .btn {
   height: 50px;
   width: 100%;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
   margin-top: 5px;
 }
 
